@@ -75,3 +75,7 @@ build/
 !**/ios/**/default.perspectivev3
 
 .dart_tool/
+
+.flutter-plugins-dependencies
+
+.flutter-plugins

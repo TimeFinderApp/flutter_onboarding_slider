@@ -2,6 +2,7 @@ import 'package:example/screens/login_page.dart';
 import 'package:example/screens/register_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding_slider/background_image.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 
 void main() {
@@ -69,17 +70,17 @@ class MyHome extends StatelessWidget {
       headerBackgroundColor: Colors.white,
       pageBackgroundColor: Colors.white,
       background: [
-        Image.asset(
-          'assets/slide_1.png',
-          height: 400,
+        BackgroundItem(
+          type: BackgroundType.image,
+          assetPath: 'assets/slide_1.png',
         ),
-        Image.asset(
-          'assets/slide_2.png',
-          height: 400,
+        BackgroundItem(
+          type: BackgroundType.image,
+          assetPath: 'assets/slide_2.png',
         ),
-        Image.asset(
-          'assets/slide_3.png',
-          height: 400,
+        BackgroundItem(
+          type: BackgroundType.image,
+          assetPath: 'assets/slide_3.png',
         ),
       ],
       speed: 1.8,

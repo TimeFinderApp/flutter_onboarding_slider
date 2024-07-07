@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 
 import 'background.dart';
 import 'background_body.dart';
+import 'background_image.dart';
 
 export 'background.dart';
 export 'background_final_button.dart';
@@ -22,7 +23,7 @@ class OnBoardingSlider extends StatefulWidget {
   final Color headerBackgroundColor;
 
   /// List of Widgets to be shown in the backgrounds of the pages. For example a picture or some illustration.
-  final List<Widget> background;
+  final List<BackgroundItem> background;
 
   /// The speed of the animation for the [background].
   final double speed;
@@ -194,9 +195,9 @@ class _OnBoardingSliderState extends State<OnBoardingSlider> {
             child: SafeArea(
               child: Background(
                 centerBackground: widget.centerBackground,
-                imageHorizontalOffset: widget.imageHorizontalOffset,
-                imageVerticalOffset: widget.imageVerticalOffset,
-                background: widget.background,
+                horizontalOffset: widget.imageHorizontalOffset,
+                verticalOffset: widget.imageVerticalOffset,
+                backgroundItems: widget.background,
                 speed: widget.speed,
                 totalPage: widget.totalPage,
                 child: Column(

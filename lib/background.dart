@@ -4,35 +4,35 @@ import 'package:flutter_onboarding_slider/background_image.dart';
 class Background extends StatelessWidget {
   final Widget child;
   final int totalPage;
-  final List<Widget> background;
+  final List<BackgroundItem> backgroundItems; // Updated to use BackgroundItem
   final double speed;
-  final double imageVerticalOffset;
-  final double imageHorizontalOffset;
+  final double verticalOffset;
+  final double horizontalOffset;
   final bool centerBackground;
 
   Background({
-    required this.imageVerticalOffset,
+    required this.verticalOffset,
     required this.child,
     required this.centerBackground,
     required this.totalPage,
-    required this.background,
+    required this.backgroundItems,
     required this.speed,
-    required this.imageHorizontalOffset,
+    required this.horizontalOffset,
   });
 
   @override
   Widget build(BuildContext context) {
-    assert(background.length == totalPage);
+    assert(backgroundItems.length == totalPage);
     return Stack(
       children: [
         for (int i = 0; i < totalPage; i++)
           BackgroundImage(
               centerBackground: centerBackground,
-              imageHorizontalOffset: imageHorizontalOffset,
-              imageVerticalOffset: imageVerticalOffset,
+              horizontalOffset: horizontalOffset,
+              verticalOffset: verticalOffset,
               id: totalPage - i,
               speed: speed,
-              background: background[totalPage - i - 1]),
+              backgroundItem: backgroundItems[totalPage - i - 1]),
         child,
       ],
     );
